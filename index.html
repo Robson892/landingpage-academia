@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Academia UltraFit - Landing Page</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- HEADER / BANNER -->
+<header class="container">
+  <div class="logo">UltraFit</div>
+  <nav>
+    <a href="#benefits">Benefícios</a>
+    <a href="#plans">Planos</a>
+    <a href="#testimonials">Depoimentos</a>
+    <a href="#signup">Inscreva-se</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Transforme seu Corpo, Revolucione sua Vida</h1>
+    <p>Academia UltraFit - o lugar onde sua melhor versão começa hoje.</p>
+    <button class="btn-primary" onclick="scrollToSignup()">Quero me Inscrever</button>
+  </div>
+</section>
+
+<section id="benefits" class="benefits">
+  <h2>Por que escolher a UltraFit?</h2>
+  <div class="benefits-cards">
+    <div class="card">
+      <h3>Equipamentos de Última Geração</h3>
+      <p>Treine com os melhores aparelhos, modernos e seguros para todos os níveis.</p>
+    </div>
+    <div class="card">
+      <h3>Equipe de Profissionais</h3>
+      <p>Instrutores qualificados e prontos para ajudar você a atingir seus objetivos.</p>
+    </div>
+    <div class="card">
+      <h3>Aulas Variadas</h3>
+      <p>Desde musculação até yoga, passando por HIIT, spinning e muito mais.</p>
+    </div>
+  </div>
+</section>
+
+<section id="plans" class="plans">
+  <h2>Escolha seu Plano</h2>
+  <div class="plans-container">
+    <div class="plan">
+      <h3>Básico</h3>
+      <div class="plan-price">R$ 99<span style="font-size: 1.2rem;">/mês</span></div>
+      <ul class="plan-features">
+        <li>Acesso livre à academia</li>
+        <li>1 avaliação física mensal</li>
+        <li>Horário restrito</li>
+      </ul>
+      <button class="btn-secondary" onclick="scrollToSignup()">Assinar</button>
+    </div>
+    <div class="plan">
+      <h3>Premium</h3>
+      <div class="plan-price">R$ 179<span style="font-size: 1.2rem;">/mês</span></div>
+      <ul class="plan-features">
+        <li>Acesso livre 24h</li>
+        <li>Avaliação física quinzenal</li>
+        <li>Aulas ilimitadas</li>
+      </ul>
+      <button class="btn-secondary" onclick="scrollToSignup()">Assinar</button>
+    </div>
+    <div class="plan">
+      <h3>VIP</h3>
+      <div class="plan-price">R$ 299<span style="font-size: 1.2rem;">/mês</span></div>
+      <ul class="plan-features">
+        <li>Personal Trainer incluso</li>
+        <li>Nutricionista</li>
+        <li>SPA e sauna liberados</li>
+      </ul>
+      <button class="btn-secondary" onclick="scrollToSignup()">Assinar</button>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="testimonials">
+  <h2>O que dizem nossos alunos</h2>
+  <div class="testimonial-slider">
+    <div class="testimonial-slide active">
+      <p>"A UltraFit mudou minha vida. Os profissionais são incríveis e o ambiente é motivador."</p>
+      <div class="testimonial-author">- Lucas Silva</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>"Planos acessíveis e flexíveis. Consegui perder 10kg em 3 meses!"</p>
+      <div class="testimonial-author">- Mariana Costa</div>
+    </div>
+    <div class="testimonial-slide">
+      <p>"Aulas dinâmicas e equipamentos modernos, super recomendo."</p>
+      <div class="testimonial-author">- João Pedro</div>
+    </div>
+  </div>
+  <div class="testimonial-controls">
+    <button class="testimonial-btn" onclick="prevTestimonial()">‹</button>
+    <button class="testimonial-btn" onclick="nextTestimonial()">›</button>
+  </div>
+</section>
+
+<section id="signup" class="benefits" style="padding:4rem 0;">
+  <h2>Pronto para começar?</h2>
+  <p>Preencha seus dados e garanta sua vaga na UltraFit agora mesmo!</p>
+  <form style="max-width: 450px; margin: 1.5rem auto; text-align:left; color:#d2dae2cc;">
+    <label for="name">Nome Completo</label><br/>
+    <input type="text" id="name" name="name" placeholder="Seu nome" required style="width:100%; padding:0.75rem; margin:0.5rem 0 1rem 0; border-radius:8px; border:none; font-size:1rem;" />
+    <label for="email">E-mail</label><br/>
+    <input type="email" id="email" name="email" placeholder="seu@email.com" required style="width:100%; padding:0.75rem; margin:0.5rem 0 1rem 0; border-radius:8px; border:none; font-size:1rem;" />
+    <label for="plan">Plano Desejado</label><br/>
+    <select id="plan" name="plan" style="width:100%; padding:0.75rem; margin:0.5rem 0 1.5rem 0; border-radius:8px; border:none; font-size:1rem;">
+      <option value="basico">Básico</option>
+      <option value="premium">Premium</option>
+      <option value="vip">VIP</option>
+    </select>
+    <button type="submit" class="btn-primary" style="width:100%;">Enviar</button>
+  </form>
+</section>
+
+<footer>
+  <div class="social-icons">
+    <a href="#" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener noreferrer">📘</a>
+    <a href="#" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener noreferrer">📸</a>
+    <a href="#" aria-label="WhatsApp" title="WhatsApp" target="_blank" rel="noopener noreferrer">💬</a>
+  </div>
+  &copy; 2025 UltraFit Academia. Todos os direitos reservados.
+</footer>
