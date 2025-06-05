@@ -1,8 +1,4 @@
-function scrollToSignup() {
-    document.getElementById('signup').scrollIntoView({ behavior: 'smooth' });
-  }
-
-  // Testimonial slider
+document.addEventListener('DOMContentLoaded', function () {
   const testimonials = document.querySelectorAll('.testimonial-slide');
   let currentIndex = 0;
 
@@ -21,5 +17,14 @@ function scrollToSignup() {
     currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
     showTestimonial(currentIndex);
   }
-  // Auto slide a cada 7 segundos
+
+  // Inicia com o primeiro
+  showTestimonial(currentIndex);
+
+  // Auto slide
   setInterval(nextTestimonial, 7000);
+
+  // Se os botões estiverem no DOM, adicione os event listeners
+  document.querySelector('.testimonial-btn:first-of-type')?.addEventListener('click', prevTestimonial);
+  document.querySelector('.testimonial-btn:last-of-type')?.addEventListener('click', nextTestimonial);
+});

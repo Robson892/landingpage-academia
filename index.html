@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Academia UltraFit - Landing Page</title>
   <link rel="stylesheet" href="styles.css" />
+  <!-- Font Awesome 6 CDN -->
+ 
+  <script src="https://kit.fontawesome.com/0a2acc9064.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -25,6 +28,8 @@
     <p>Academia UltraFit - o lugar onde sua melhor versão começa hoje.</p>
     <button class="btn-primary" onclick="scrollToSignup()">Quero me Inscrever</button>
   </div>
+
+  
 </section>
 
 <section id="benefits" class="benefits">
@@ -98,10 +103,11 @@
     </div>
   </div>
   <div class="testimonial-controls">
-    <button class="testimonial-btn" onclick="prevTestimonial()">‹</button>
-    <button class="testimonial-btn" onclick="nextTestimonial()">›</button>
+    <button id="prevBtn" class="testimonial-btn">‹</button>
+    <button id="nextBtn" class="testimonial-btn">›</button>
   </div>
 </section>
+
 
 <section id="signup" class="benefits" style="padding:4rem 0;">
   <h2>Pronto para começar?</h2>
@@ -121,11 +127,49 @@
   </form>
 </section>
 
+
 <footer>
   <div class="social-icons">
-    <a href="#" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener noreferrer">📘</a>
-    <a href="#" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener noreferrer">📸</a>
-    <a href="#" aria-label="WhatsApp" title="WhatsApp" target="_blank" rel="noopener noreferrer">💬</a>
+    <a href="https://pt-br.facebook.com/" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://web.whatsapp.com/" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
   </div>
-  &copy; 2025 UltraFit Academia. Todos os direitos reservados.
+  <p>&copy; 2025 UltraFit Academia. Todos os direitos reservados.</p>
+
+  <script src="script.js"></script> 
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    prevBtn.addEventListener('click', () => {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    });
+
+    // Auto-slide
+    setInterval(() => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }, 7000);
+
+    // Inicializa o primeiro slide
+    showSlide(current);
+  });
+</script>
+
 </footer>
+</body>
